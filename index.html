@@ -1,0 +1,1123 @@
+<!-- Naresh-IT Home page -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naresh-IT home page using card</title>
+    <!-- <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+        }
+
+        .blog-new-batches {
+            background-color: #00061E;
+            color: rgb(211, 168, 168);
+            display: flex;
+            justify-content: end;
+            padding: 10px;
+        }
+
+        .all-span span {
+            margin: 0 5px;
+        }
+
+        .line {
+            color: green;
+        }
+
+        header {
+            background-color: aliceblue;
+            position: sticky;
+            top: 0px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            padding: 10px 20px;
+            z-index: 1000;
+        }
+
+        #search {
+            width: 250px;
+            outline: none;
+            padding: 10px;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            border: 1px solid gray;
+        }
+
+        .bi-search {
+            background-color: #F5AC52;
+            border: 1px solid gray;
+            padding: 10px;
+            margin-left: -5px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+        }
+
+        .navbar ol {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar ol li {
+            padding: 5px;
+            margin: 10px;
+            white-space: nowrap;
+        }
+
+        .brand-name img {
+            width: 250px;
+            margin-left: 40px;
+        }
+
+        .bi-house-door {
+            font-size: 20px;
+        }
+
+        .headings h2 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .headings p {
+            color: rgb(86, 84, 84);
+        }
+
+        .login-btn {
+            background-color: blue;
+            color: white;
+            border: 1px solid gray;
+            border-radius: 12px;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .login-btn a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .headings {
+            margin: 30px;
+        }
+
+        .Nav-Cards {
+            display: grid;
+            grid-template-columns: 2.3fr 9.7fr;
+            /* margin: 30px; */
+            padding: 10px;
+            gap: 20px;
+        }
+
+        .block-nav {
+            background-color: aliceblue;
+            margin-left: 30px;
+            box-shadow: 5px 5px 3px black;
+            height: fit-content;
+        }
+
+        .block-nav ol {
+            list-style: none;
+            margin: 20px;
+        }
+
+        .block-nav ol li {
+            border-radius: 7px;
+            margin: 10px;
+            padding: 10px;
+            font-size: 20px;
+            box-shadow: 2px 2px 2px gray;
+        }
+
+        .block-nav ol li:hover {
+            background-color: cornflowerblue;
+            cursor: pointer;
+        }
+
+        .card {
+            width: 250px;
+            height: 435px;
+            border: 1px solid gray;
+            box-shadow: 2px 2px 2px black;
+            border-radius: 10px;
+            /* margin: 20px; */
+
+        }
+
+        .card:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+            transition: 0.5s;
+            box-shadow: 10px 10px 35px black;
+        }
+
+        .card-image {
+            width: 100%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .card-body {
+            padding: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            height: 223px;
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .rating {
+            color: goldenrod;
+            text-align: center;
+        }
+
+        .course-schedule {
+            list-style: none;
+            font-size: 16px;
+            margin-top: 15px;
+            margin-left: 20px;
+        }
+
+        .course-schedule li {
+            margin-bottom: 15px;
+        }
+
+        .card-footer {
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+        }
+
+        .enroll-btn {
+            background-color: blueviolet;
+            color: white;
+            padding: 10px;
+            border-bottom-left-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .bi-share {
+            background-color: aqua;
+            padding: 10px;
+            border-bottom-right-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .course-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        /* ============================================
+   LARGE DESKTOP (1440px and above)
+   ============================================ */
+        @media screen and (min-width: 1440px) {
+            .Nav-Cards {
+                max-width: 1800px;
+                margin: 30px auto;
+            }
+
+            .course-cards {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .card {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+
+        /* ============================================
+   DESKTOP (1200px - 1439px)
+   ============================================ */
+        @media screen and (max-width: 1439px) and (min-width: 1200px) {
+            .course-cards {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .card {
+                width: 100%;
+                max-width: 240px;
+            }
+
+            #search {
+                width: 180px;
+            }
+
+            .brand-name img {
+                width: 200px;
+                margin-left: 20px;
+            }
+        }
+
+        /* ============================================
+   TABLET LANDSCAPE (1024px - 1199px)
+   ============================================ */
+        @media screen and (max-width: 1199px) and (min-width: 1024px) {
+            header {
+                flex-wrap: wrap;
+                padding: 10px;
+            }
+
+            .brand-name img {
+                width: 180px;
+                margin-left: 10px;
+            }
+
+            .navbar ol li {
+                margin: 5px;
+                padding: 5px;
+                font-size: 14px;
+            }
+
+            #search {
+                width: 200px;
+            }
+
+            .Nav-Cards {
+                grid-template-columns: 2.5fr 9.5fr;
+                margin: 20px;
+            }
+
+            .block-nav {
+                margin-left: 10px;
+            }
+
+            .block-nav ol li {
+                font-size: 16px;
+                padding: 8px;
+            }
+
+            .course-cards {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .card {
+                width: 100%;
+                max-width: 280px;
+                margin: 15px auto;
+            }
+        }
+
+        /* ============================================
+   TABLET PORTRAIT (768px - 1023px)
+   ============================================ */
+        @media screen and (max-width: 1023px) and (min-width: 768px) {
+            .blog-new-batches {
+                font-size: 12px;
+                padding: 8px;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .all-span span {
+                margin: 0 3px;
+            }
+
+            header {
+                flex-wrap: wrap;
+                padding: 10px;
+                justify-content: center;
+            }
+
+            .brand-name {
+                width: 100%;
+                text-align: center;
+            }
+
+            .brand-name img {
+                width: 200px;
+                margin: 10px auto;
+            }
+
+            .searchbar {
+                width: 100%;
+                text-align: center;
+                margin: 10px 0;
+            }
+
+            #search {
+                width: 60%;
+                min-width: 200px;
+            }
+
+            .navbar {
+                width: 100%;
+            }
+
+            .navbar ol {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .navbar ol li {
+                margin: 5px;
+                padding: 8px;
+                font-size: 13px;
+            }
+
+            .headings {
+                margin: 20px;
+                text-align: center;
+            }
+
+            .headings h2 {
+                font-size: 22px;
+            }
+
+            .Nav-Cards {
+                grid-template-columns: 1fr;
+                margin: 20px;
+            }
+
+            .block-nav {
+                margin: 0 auto 20px;
+                width: 90%;
+                max-width: 600px;
+            }
+
+            .block-nav ol {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+            }
+
+            .block-nav ol li {
+                font-size: 14px;
+                text-align: center;
+            }
+
+            .course-cards {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                justify-items: center;
+            }
+
+            .card {
+                width: 100%;
+                max-width: 300px;
+                margin: 10px;
+                height: auto;
+            }
+        }
+
+        /* ============================================
+   MOBILE LARGE (481px - 767px)
+   ============================================ */
+        @media screen and (max-width: 767px) and (min-width: 481px) {
+            .blog-new-batches {
+                font-size: 10px;
+                padding: 5px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .all-span {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .all-span span {
+                margin: 2px;
+            }
+
+            header {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .brand-name {
+                width: 100%;
+                text-align: center;
+            }
+
+            .brand-name img {
+                width: 180px;
+                margin: 10px auto;
+            }
+
+            .searchbar {
+                width: 100%;
+                text-align: center;
+                margin: 10px 0;
+            }
+
+            #search {
+                width: 70%;
+                min-width: 200px;
+            }
+
+            .navbar {
+                width: 100%;
+            }
+
+            .navbar ol {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .navbar ol li {
+                margin: 5px;
+                padding: 6px;
+                font-size: 12px;
+            }
+
+            .headings {
+                margin: 15px;
+                text-align: center;
+            }
+
+            .headings h2 {
+                font-size: 20px;
+            }
+
+            .headings p {
+                font-size: 14px;
+            }
+
+            .Nav-Cards {
+                grid-template-columns: 1fr;
+                margin: 15px;
+            }
+
+            .block-nav {
+                margin: 0 auto 20px;
+                width: 100%;
+            }
+
+            .block-nav ol {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+                margin: 15px;
+            }
+
+            .block-nav ol li {
+                font-size: 13px;
+                text-align: center;
+                padding: 8px;
+            }
+
+            .course-cards {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                justify-items: center;
+            }
+
+            .card {
+                width: 100%;
+                max-width: 350px;
+                margin: 10px auto;
+                height: auto;
+            }
+        }
+
+        /* ============================================
+   MOBILE SMALL (up to 480px)
+   ============================================ */
+        @media screen and (max-width: 480px) {
+            .blog-new-batches {
+                font-size: 9px;
+                padding: 5px;
+                justify-content: center;
+            }
+
+            .all-span {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                line-height: 1.5;
+            }
+
+            .all-span span {
+                margin: 2px;
+            }
+
+            header {
+                flex-direction: column;
+                padding: 10px 5px;
+            }
+
+            .brand-name {
+                width: 100%;
+                text-align: center;
+            }
+
+            .brand-name img {
+                width: 150px;
+                margin: 10px auto;
+            }
+
+            .searchbar {
+                width: 100%;
+                text-align: center;
+                margin: 10px 0;
+            }
+
+            #search {
+                width: 65%;
+                padding: 8px;
+                font-size: 14px;
+            }
+
+            .bi-search {
+                padding: 8px;
+            }
+
+            .navbar {
+                display: none;
+            }
+
+            .navbar .login-btn {
+                width: 100%;
+                text-align: center;
+                /* display: block; */
+            }
+
+            .headings {
+                margin: 10px;
+                text-align: center;
+            }
+
+            .headings h2 {
+                font-size: 18px;
+                line-height: 1.4;
+            }
+
+            .headings p {
+                font-size: 13px;
+            }
+
+            .Nav-Cards {
+                grid-template-columns: 1fr;
+                margin: 10px;
+                gap: 15px;
+            }
+
+            .block-nav {
+                display: none;
+            }
+
+            .block-nav ol {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 5px;
+                margin: 10px;
+            }
+
+            .block-nav ol li {
+                font-size: 14px;
+                text-align: center;
+                padding: 10px;
+                margin: 5px;
+            }
+
+            .course-cards {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                justify-items: center;
+            }
+
+            .card {
+                width: 100%;
+                max-width: 320px;
+                margin: 10px auto;
+                height: auto;
+            }
+
+            .card-body {
+                padding: 15px;
+                height: auto;
+            }
+
+            .card-title {
+                font-size: 18px;
+            }
+
+            .course-schedule {
+                font-size: 14px;
+                margin-left: 10px;
+            }
+
+            .course-schedule li {
+                margin-bottom: 10px;
+            }
+
+            .enroll-btn,
+            .bi-share {
+                padding: 12px;
+                font-size: 14px;
+            }
+        }
+
+        /* ============================================
+   EXTRA SMALL MOBILE (up to 360px)
+   ============================================ */
+        @media screen and (max-width: 360px) {
+            .blog-new-batches {
+                font-size: 8px;
+            }
+
+            .brand-name img {
+                width: 130px;
+            }
+
+            #search {
+                width: 70%;
+                padding: 6px;
+                font-size: 12px;
+            }
+
+            .bi-search {
+                padding: 6px;
+            }
+
+            .navbar ol li {
+                font-size: 11px;
+                padding: 6px 10px;
+            }
+
+            .headings h2 {
+                font-size: 16px;
+            }
+
+            .headings p {
+                font-size: 12px;
+            }
+
+            .block-nav ol li {
+                font-size: 12px;
+                padding: 8px;
+            }
+
+            .card {
+                max-width: 280px;
+            }
+
+            .card-title {
+                font-size: 16px;
+            }
+
+            .course-schedule {
+                font-size: 12px;
+            }
+        }
+
+        /* Utility classes for better responsive behavior */
+        @media screen and (max-width: 767px) {
+            .bi-chevron-down {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="blog-new-batches">
+        <div class="all-span">
+            <span>Blogs <span class="line">|</span></span>
+            <span>New Batches <span class="line">|</span></span>
+            <span>Hire From Us <span class="line">|</span></span>
+            <span class="bi bi-telephone">
+                <span>8179191999 <span class="line">|</span></span>
+            </span>
+            <span class="bi bi-envelope">
+                <span>support@nareshit.com <span class="line">|</span></span>
+            </span>
+        </div>
+    </nav>
+
+    <header>
+
+        <div class="brand-name">
+
+            <img src="./public/images/naresh-it-logo.png" alt="naresh-it-logo">
+        </div>
+
+        <div class="searchbar">
+
+            <input type="search" name="searchbar" id="search" placeholder="Search Course">
+            <span class="bi bi-search"></span>
+        </div>
+
+        <div class="navbar">
+            <nav>
+                <ol>
+                    <li><span class="bi bi-house-door"></span></li>
+                    <li>ALL COURSES <span class="bi bi-chevron-down"></span></li>
+                    <li>SERVICES <span class="bi bi-chevron-down"></span></li>
+                    <li>TRAINING <span class="bi bi-chevron-down"></span></li>
+                    <li>ABOUT <span class="bi bi-chevron-down"></span></li>
+                    <li>CONTACT</li>
+                    <li class="login-btn"><a href="./Login-form.html">Login</a></li>
+                </ol>
+            </nav>
+        </div>
+
+    </header>
+    <div class="headings">
+        <h2>Learn Software Courses from the Expert Trainers</h2>
+        <p>Explore new and trending free online courses.</p>
+    </div>
+
+    <div class="Nav-Cards">
+        <div class="block-nav">
+            <ol>
+                <li>All Courses</li>
+                <li>DevSecOps</li>
+                <li>Internships</li>
+                <li>Placement Assistance</li>
+                <li>NASSCOM</li>
+                <li>Full Stack</li>
+                <li>Frameworks</li>
+                <li>Digital Marketing</li>
+                <li>Analytics</li>
+                <li>Automations</li>
+                <li>Data Base</li>
+                <li>Web Development</li>
+                <li>Data Science</li>
+                <li>DevOps</li>
+                <li>Soft Skills</li>
+                <li>Mobile Technologies</li>
+                <li>Mulesoft</li>
+                <li>Software Testing</li>
+                <li>Operating System</li>
+                <li>Cloud Computing</li>
+            </ol>
+        </div>
+
+        <div class="course-cards">
+
+            <div class="card">
+                <div class="card-header">
+                    <img src="./public/images/python.png" alt="python cards" class="card-image">
+                </div>
+
+                <div class="card-body">
+                    <div class="card-title">
+                        Full Stack Python
+                    </div>
+                    <div class="rating">
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                    </div>
+
+                    <div>
+                        <ul class="course-schedule">
+                            <li class="bi bi-calendar">Start Date: 18 Dec 2025</li>
+                            <li class="bi bi-person">By: Mr. Satish Gupta</li>
+                            <li class="bi bi-clock">Dur: 5 Months</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+                    <div class="enroll-btn">
+                        ENROLL
+                    </div>
+                    <div class="bi bi-share">
+                        SHARE
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card-header">
+                    <img src="./public/images/c-language.png" alt="C Language" class="card-image">
+                </div>
+
+                <div class="card-body">
+                    <div class="card-title">
+                        C Language
+                    </div>
+                    <div class="rating">
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                    </div>
+
+                    <div>
+                        <ul class="course-schedule">
+                            <li class="bi bi-calendar">Start Date: 19 Dec 2025</li>
+                            <li class="bi bi-person">By: Mr. Srikant</li>
+                            <li class="bi bi-clock">Dur: 90 Days</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+                    <div class="enroll-btn">
+                        ENROLL
+                    </div>
+                    <div class="bi bi-share">
+                        SHARE
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <img src="./public/images/DevOps.jpg" alt="DevOps With Multi-Claud" class="card-image">
+                </div>
+
+                <div class="card-body">
+                    <div class="card-title">
+                        DevOps With Multi-Claud
+                    </div>
+                    <div class="rating">
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                    </div>
+
+                    <div>
+                        <ul class="course-schedule">
+                            <li class="bi bi-calendar">Start Date: 17 Dec 2025</li>
+                            <li class="bi bi-person">By: Mr. Riyaz</li>
+                            <li class="bi bi-clock">Dur: 4 Months</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+                    <div class="enroll-btn">
+                        ENROLL
+                    </div>
+                    <div class="bi bi-share">
+                        SHARE
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <img src="./public/images/ds-ai.png" alt="Full Stack Data Science & AI" class="card-image">
+                </div>
+
+                <div class="card-body">
+                    <div class="card-title">
+                        Full Stack Data Science & AI
+                    </div>
+                    <div class="rating">
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                    </div>
+
+                    <div>
+                        <ul class="course-schedule">
+                            <li class="bi bi-calendar">Start Date: 17 Dec 2025</li>
+                            <li class="bi bi-person">By: Mr. Prakash Senapati</li>
+                            <li class="bi bi-clock">Dur: 4 Months</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+                    <div class="enroll-btn">
+                        ENROLL
+                    </div>
+                    <div class="bi bi-share">
+                        SHARE
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <img src="./public/images/Java.png" alt="Full Stack JAVA" class="card-image">
+                </div>
+
+                <div class="card-body">
+                    <div class="card-title">
+                        Full Stack JAVA
+                    </div>
+                    <div class="rating">
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                    </div>
+
+                    <div>
+                        <ul class="course-schedule">
+                            <li class="bi bi-calendar">Start Date: 17 Dec 2025</li>
+                            <li class="bi bi-person">By: Mr. Hari Krishna</li>
+                            <li class="bi bi-clock">Dur: 6 Months</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+                    <div class="enroll-btn">
+                        ENROLL
+                    </div>
+                    <div class="bi bi-share">
+                        SHARE
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <img src="./public/images/dotnet.png" alt="Full Stack .Net" class="card-image">
+                </div>
+
+                <div class="card-body">
+                    <div class="card-title">
+                        Full Stack .Net
+                    </div>
+                    <div class="rating">
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                    </div>
+
+                    <div>
+                        <ul class="course-schedule">
+                            <li class="bi bi-calendar">Start Date: 17 Dec 2025</li>
+                            <li class="bi bi-person">By: Real Time Expert </li>
+                            <li class="bi bi-clock">Dur: 5 Months</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+                    <div class="enroll-btn">
+                        ENROLL
+                    </div>
+                    <div class="bi bi-share">
+                        SHARE
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <img src="./public/images/dsa-python.png" alt="DSA with Python" class="card-image">
+                </div>
+
+                <div class="card-body">
+                    <div class="card-title">
+                        DSA with Python
+                    </div>
+                    <div class="rating">
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                    </div>
+
+                    <div>
+                        <ul class="course-schedule">
+                            <li class="bi bi-calendar">Start Date: Batch Starts Soon</li>
+                            <li class="bi bi-person">By: Mr. ______</li>
+                            <li class="bi bi-clock">Dur: ---------</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+                    <div class="enroll-btn">
+                        ENROLL
+                    </div>
+                    <div class="bi bi-share">
+                        SHARE
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <img src="./public/images/python.png" alt="python cards" class="card-image">
+                </div>
+
+                <div class="card-body">
+                    <div class="card-title">
+                        Full Stack Python
+                    </div>
+                    <div class="rating">
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                    </div>
+
+                    <div>
+                        <ul class="course-schedule">
+                            <li class="bi bi-calendar">Start Date: 18 Dec 2025</li>
+                            <li class="bi bi-person">By: Mr. Satish Gupta</li>
+                            <li class="bi bi-clock">Dur: 5 Months</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+                    <div class="enroll-btn">
+                        ENROLL
+                    </div>
+                    <div class="bi bi-share">
+                        SHARE
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
